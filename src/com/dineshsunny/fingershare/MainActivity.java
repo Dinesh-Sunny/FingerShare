@@ -26,7 +26,7 @@ public class MainActivity extends ActionBarActivity implements
 	 * derivative, which will keep every loaded fragment in memory. If this
 	 * becomes too memory intensive, it may be best to switch to a
 	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-	 * Yipee ... Dinesh Sunny's project
+	 * Yipee ... Dinesh Sunny's project!!
 	 */
 	SectionsPagerAdapter mSectionsPagerAdapter;
 
