@@ -18,5 +18,14 @@
     <string name="signup_button_label">Signup</string>
     <string name="signin_label_head">Do you know us already?</string>
     <string name="signin_textview">Signin</string>
+    <string name="email_hint_signin">Username/EmailID</string>
+    <string name="signup_builder_title">oops!</string>
+    <string name="signup_builder_message">Make sure you enter Username, Email and Password</string>
+    <string name="signup_builder_validation">Make sure you enter a valid information</string>
+    <string name="signup_success_builder_welcome_title">Welcome!</string>
+    <string name="signup_success_builder_welcome_message">Eager to see the new World !</string>
+    <string name="login_builder_title">oops!</string>
+    <string name="login_builder_message">Make sure you enter Valid Username and Password</string>
+    <string name="menu_logout_item">Logout</string>
 
 </resources>

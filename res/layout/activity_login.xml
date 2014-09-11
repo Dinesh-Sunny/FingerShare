@@ -9,40 +9,40 @@
     tools:context="com.dineshsunny.fingershare.LoginActivity" >
 
     <EditText
-        android:id="@+id/email_field"
+        android:id="@+id/login_username_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:hint="@string/email_hint"
+        android:hint="@string/email_hint_signin"
         android:inputType="textEmailAddress" >
 
         <requestFocus />
     </EditText>
 
     <EditText
-        android:id="@+id/password_field"
+        android:id="@+id/login_password_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/email_field"
+        android:layout_below="@+id/login_username_edittext"
         android:ems="10"
         android:hint="@string/password_hint"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/login_login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/password_field"
+        android:layout_below="@+id/login_password_edittext"
         android:text="@string/login_button_text" />
 
     <TextView
         android:id="@+id/signup_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_button"
+        android:layout_below="@+id/login_login_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
         android:text="@string/signup_text" />

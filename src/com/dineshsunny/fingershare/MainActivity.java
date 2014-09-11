@@ -11,14 +11,20 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.parse.ParseAnalytics;
+import com.parse.ParseUser;
+
 public class MainActivity extends ActionBarActivity implements
 		ActionBar.TabListener {
+
+	private static final String TAG = MainActivity.class.getSimpleName();
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -35,17 +41,23 @@ public class MainActivity extends ActionBarActivity implements
 	 */
 	ViewPager mViewPager;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_main);
-
-		Intent loginIntent = new Intent(this, LoginActivity.class);
-		loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		// YOU CAN ALSO WRITE loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-		// | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		startActivity(loginIntent);
+		
+		ParseAnalytics.trackAppOpened(getIntent()); //analytics of parse cloud
+		
+		ParseUser currentUser = ParseUser.getCurrentUser();
+		if (currentUser == null) {
+		  // do stuff with the user
+			navigateToLogin();
+		} else {
+		  Log.i(TAG, currentUser.getUsername());
+		}
+		
 
 		// Set up the action bar.
 		final ActionBar actionBar = getSupportActionBar();
@@ -85,21 +97,32 @@ public class MainActivity extends ActionBarActivity implements
 
 	}
 
+	private void navigateToLogin() {
+		Intent loginIntent = new Intent(this, LoginActivity.class);
+		loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		// YOU CAN ALSO WRITE loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+		// | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		startActivity(loginIntent);
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+		if (id == R.id.menu_logout) {
+			ParseUser.logOut(); 
+			navigateToLogin();
 		}
 		return super.onOptionsItemSelected(item);
 	}

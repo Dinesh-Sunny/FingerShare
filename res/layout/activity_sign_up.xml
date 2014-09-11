@@ -9,7 +9,7 @@
     tools:context="com.dineshsunny.fingershare.SignUpActivity" >
 
     <EditText
-        android:id="@+id/username_field"
+        android:id="@+id/signup_username_Edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -21,49 +21,38 @@
     </EditText>
 
     <EditText
-        android:id="@+id/email_id_field_signup"
+        android:id="@+id/signup_email_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/username_field"
+        android:layout_below="@+id/signup_username_Edittext"
         android:ems="10"
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/password_field_signup"
+        android:id="@+id/signup_password_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/email_id_field_signup"
+        android:layout_below="@+id/signup_email_edittext"
         android:ems="10"
         android:hint="@string/password_hint"
         android:inputType="textPassword" />
 
-    <EditText
-        android:id="@+id/password_confirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/password_field_signup"
-        android:ems="10"
-        android:hint="@string/password_confirm_signup"
-        android:inputType="textPassword" />
-
     <Button
-        android:id="@+id/signup_button"
+        android:id="@+id/signup_signup_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/password_confirm"
-        android:layout_below="@+id/password_confirm"
+        android:layout_below="@+id/signup_password_edittext"
         android:layout_marginTop="31dp"
         android:text="@string/signup_button_label" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/signup_button"
-        android:layout_below="@+id/signup_button"
+        android:layout_alignLeft="@+id/signup_signup_button"
+        android:layout_below="@+id/signup_signup_button"
         android:layout_marginTop="48dp"
         android:gravity="center_horizontal" >
 
@@ -74,7 +63,7 @@
             android:text="@string/signin_label_head" />
 
         <TextView
-            android:id="@+id/signin_label_textview"
+            android:id="@+id/signup_signin_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/signin_textview" 
