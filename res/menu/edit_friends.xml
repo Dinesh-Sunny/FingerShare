@@ -1,18 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.dineshsunny.fingershare.MainActivity" >
+    tools:context="com.dineshsunny.fingershare.EditFriendsActivity" >
 
-    <item
+   <item
         android:id="@+id/menu_logout"
         android:orderInCategory="100"
         android:title="@string/menu_logout_item"
-        app:showAsAction="never"/>
-    
-     <item
-        android:id="@+id/menu_edit_friends"
-        android:orderInCategory="200"
-        android:title="@string/menu_edit_friends_item"
         app:showAsAction="never"/>
 
 </menu>

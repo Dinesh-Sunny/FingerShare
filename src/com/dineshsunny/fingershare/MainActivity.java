@@ -116,6 +116,9 @@ public class MainActivity extends ActionBarActivity implements
 		if (id == R.id.menu_logout) {
 			ParseUser.logOut(); 
 			navigateToLogin();
+		}else if(id == R.id.menu_edit_friends){
+			Intent intent = new Intent(this, EditFriendsActivity.class);
+			startActivity(intent);
 		}
 		return super.onOptionsItemSelected(item);
 	}
