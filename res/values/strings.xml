@@ -33,5 +33,17 @@
     <string name="title_activity_edit_friends">Edit Friends</string>
     <string name="empty_add_friends_label">No Friend Requests</string>
      <string name="error_title">We\'re Sorry</string>
+        <string name="menu_camera_label">Camera</string>
+        
+        <string-array name="camera_options">
+            <item >Take Picture</item>
+            <item >Take Video</item>
+            <item >Choose Picture</item>
+            <item >Choose Video</item>
+        </string-array>
+        <string name="external_storage_not_found">There was a problem Accessing your devide\'s External Storage</string>
+        <string name="video_select_limit">The selected video must be less than 10MB</string>
+        <string name="selected_file_problem">There was a problem with the selected file</string>
+        <string name="file_error_chose_warning">Selected file is greater than 10MB,please choose another</string>
 
 </resources>
